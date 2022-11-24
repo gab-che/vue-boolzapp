@@ -1,0 +1,72 @@
+:root{
+    --color_bg_primary: #dadbd0;
+    --color_bg_accent: #009688;
+    --color_nav_primary: #eaeaea;
+    --color_nav_accent: #b1b1b1;
+    --color_bottom_nav_primary: #f3eeea;
+    --color_bottom_nav_accent: #6a7275;
+    --color_alert: #8edafc;
+    --color_selected: #e9ebeb;
+    --color_msg_sent: #d5f9ba;
+}
+
+main{
+    height: 100vh;
+    background-color: var(--color_bg_primary);
+    z-index: -1;
+    position: relative;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+}
+
+main::before{
+    content:'';
+    position: absolute;
+    top:0;
+    width: 100%;
+    height: 20vh;
+    background-color: var(--color_bg_accent);
+    z-index: -1;
+}
+
+.main_container{
+    height: 100%;
+    box-shadow: 0 0 8px var(--color_bottom_nav_accent);
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.sidebar, .main_display{
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar{
+    min-width: 200px;
+    border-right: 1px solid var(--color_nav_accent);
+}
+
+.main_display{
+    width: 100%;
+}
+
+.profile_container{
+    background-color: var(--color_nav_primary);
+}
+
+.userlist_container,
+.center_display,
+.text_area{
+    flex-grow: 1;
+    overflow: auto;
+}
+
+.center_display{
+    background-image: url("../img/mine.jpg");
+    background-position: center;
+}
+
+.bottom_display{
+    min-height: 50px;
+    background-color: var(--color_bottom_nav_primary);
+}
