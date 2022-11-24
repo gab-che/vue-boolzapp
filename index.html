@@ -22,12 +22,12 @@
                 
                 <div class="sidebar">
                     <div class="profile_container d-flex justify-content-between">
-                        <div class="profile d-flex align-items-center">
+                        <div class="profile d-flex align-items-center gap-2">
                             <div class="profile_img">
                                 <img src="img/avatar_io.jpg" alt="" class="img-fluid">
                             </div>
                             <div class="profile_text">
-                                <span class="profile_name">Sofia</span>
+                                <span class="main_text">Sofia</span>
                             </div>
                         </div>
                         <ul class="button_list list-unstyled d-flex align-items-center gap-2">
@@ -37,24 +37,36 @@
                         </ul>
                     </div>
 
-                    <div class="alert_container d-flex py-1 px-3">
+                    <div class="alert_container d-flex py-1 px-3 gap-2">
                         <div class="alert_icon">
                             <i class="fa-solid fa-bell-slash"></i>
                         </div>
-                        <div class="alert_text"></div>
+                        <div class="alert_text d-flex flex-column">
+                            <span class="main_text">Ricevi notifiche di nuovi messaggi</span>
+                            <a href="#"><span class="link-secondary">Attiva notifiche desktop</span></a>
+                        </div>
                     </div>
                     
-                    <div class="searchbar_container"></div>
+                    <div class="searchbar_container">
+                        <div class="input-group input-group-sm">
+                            <button class="btn btn-outline-secondary" type="button" id="button-addon1"><i class="fa-solid fa-magnifying-glass"></i></button>
+                            <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat">
+                        </div>
+                    </div>
                     
                     <ul class="userlist_container list-unstyled">
-                        <li class="single_user justify-content-between">
-                            <div class="profile d-flex">
+                        <li class="single_user d-flex justify-content-between py-2 px-3"
+                            v-for="user in userList">
+                            <div class="profile d-flex gap-3">
                                 <div class="profile_img">
-                                    <img src="" alt="" class="img-fluid">
+                                    <img :src=`img/avatar${user.avatar}.jpg` class="img-fluid">
                                 </div>
-                                <div class="profile_text"></div>
+                                <div class="profile_text d-flex flex-column">
+                                    <span class="main_text">{{user.name}}</span>
+                                    <span class="sub_text">Ultimo messaggio</span>
+                                </div>
                             </div>
-                            <div class="time"></div>
+                            <div class="sub_text">12:00</div>
                         </li>
                     </ul>
                 </div>
@@ -63,13 +75,13 @@
 
                     <div class="top_display">
                         <div class="profile_container d-flex justify-content-between">
-                            <div class="profile d-flex align-items-center">
+                            <div class="profile d-flex align-items-center gap-2">
                                 <div class="profile_img">
                                     <img src="img/avatar_1.jpg" alt="" class="img-fluid">
                                 </div>
                                 <div class="profile_text d-flex flex-column">
-                                    <span class="profile_name">Michele</span>
-                                    <span class="profile_time">Ultimo accesso oggi alle 11:00</span>
+                                    <span class="main_text">Michele</span>
+                                    <span class="sub_text">Ultimo accesso oggi alle 11:00</span>
                                 </div>
                             </div>
                             <ul class="button_list list-unstyled d-flex align-items-center gap-2">
