@@ -13,21 +13,9 @@
 
 main{
     height: 100vh;
-    background-color: var(--color_bg_primary);
-    z-index: -1;
-    position: relative;
+    background-image: linear-gradient(var(--color_bg_accent) 20%, var(--color_bg_primary) 20%);
     padding-top: 3rem;
     padding-bottom: 3rem;
-}
-
-main::before{
-    content:'';
-    position: absolute;
-    top:0;
-    width: 100%;
-    height: 20vh;
-    background-color: var(--color_bg_accent);
-    z-index: -1;
 }
 
 .main_container{
@@ -44,7 +32,7 @@ main::before{
 }
 
 .sidebar{
-    min-width: 400px;
+    min-width: 350px;
     border-right: 1px solid var(--color_nav_accent);
 }
 
@@ -82,6 +70,10 @@ main::before{
     border-bottom: 1px solid var(--color_selected);
 }
 
+.single_user.active{
+    background-color: var(--color_selected);
+}
+
 .center_display{
     background-image: url("../img/mine.jpg");
     background-position: center;
@@ -90,6 +82,12 @@ main::before{
 .bottom_display{
     min-height: 50px;
     background-color: var(--color_bottom_nav_primary);
+}
+
+.bottom_display button{
+    border: none;
+    color: var(--color_bottom_nav_accent);
+    background-color: transparent;
 }
 
 .profile_img,
@@ -128,4 +126,31 @@ a, .sub_text{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.text_bubble{
+    width: 18vw;
+    min-height: 40px;
+    border-radius: 5px;
+    background-color: white;
+    margin: 0 2rem .4rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    padding: .5rem .3rem .3rem .6rem;
+}
+
+.text_bubble.sent{
+    background-color: var(--color_msg_sent);
+    margin-left: auto;
+}
+
+.text_bubble .msg_text{
+    font-size: .8rem;
+}
+
+.text_bubble .msg_time{
+    font-size: .6rem;
+    color: var(--color_nav_accent);
+    display: flex;
+    align-self: end;
 }
