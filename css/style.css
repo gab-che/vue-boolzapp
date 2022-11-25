@@ -23,7 +23,6 @@ main{
     box-shadow: 0 0 8px var(--color_bottom_nav_accent);
     padding-left: 0;
     padding-right: 0;
-    z-index: 2;
 }
 
 .sidebar, .main_display{
@@ -32,12 +31,13 @@ main{
 }
 
 .sidebar{
-    min-width: 350px;
+    width: 300px;
     border-right: 1px solid var(--color_nav_accent);
+    flex-shrink: 0;
 }
 
 .main_display{
-    width: 100%;
+    flex-grow: 1;
 }
 
 .profile_container{

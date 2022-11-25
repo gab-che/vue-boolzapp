@@ -56,10 +56,11 @@
                     
                     <ul class="userlist_container list-unstyled">
                         <li class="single_user d-flex justify-content-between py-2 px-3"
-                            v-for="user in userList">
+                            v-for="(user, i) in userList" :key="i + user.name"
+                            @click="selectedUser = user">
                             <div class="profile d-flex gap-3">
                                 <div class="profile_img">
-                                    <img :src=`img/avatar${user.avatar}.jpg` class="img-fluid">
+                                    <img :src="`img/avatar${user.avatar}.jpg`" class="img-fluid">
                                 </div>
                                 <div class="profile_text d-flex flex-column">
                                     <span class="main_text">{{user.name}}</span>
@@ -93,17 +94,11 @@
                     </div>
 
                     <div class="center_display py-3 px-1 px-md-2 px-lg-5">
-                        <div class="text_bubble sent">
-                            <span class="msg_text">Hai comprato i succhi?</span>
-                            <span class="msg_time">13:32</span>
-                        </div>
-                        <div class="text_bubble sent">
-                            <span class="msg_text">Quelli alla pera</span>
-                            <span class="msg_time">13:32</span>
-                        </div>
-                        <div class="text_bubble received">
-                            <span class="msg_text">Non c'erano :(</span>
-                            <span class="msg_time">13:34</span>
+                        <div class="text_bubble"
+                            v-for="message in selectedUser.messages"
+                            :class="{'sent' : message.status === 'sent'}">
+                            <span class="msg_text">{{message.message}}</span>
+                            <span class="msg_time">{{message.date}}</span>
                         </div>
                     </div>
 
