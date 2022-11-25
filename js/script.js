@@ -6,11 +6,24 @@ createApp({
         return{
             userList,
             selectedUser: null,
-        }
+            newText: [
+                {
+                    message: "",
+                }
+            ],
+        };
     },
 
     methods: {
-
+        sendText(){
+            this.selectedUser.messages.push({
+                message: this.newText.message,
+                date: new Date().toLocaleString(),
+                status: "sent"
+            });
+            
+            this.newText.message = "";
+        }
     },
 
     beforeMount(){

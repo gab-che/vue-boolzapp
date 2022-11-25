@@ -157,4 +157,5 @@ a, .sub_text{
     color: var(--color_nav_accent);
     display: flex;
     align-self: end;
+    text-align: right;
 }

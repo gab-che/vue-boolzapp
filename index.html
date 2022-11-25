@@ -56,6 +56,7 @@
                     
                     <ul class="userlist_container list-unstyled">
                         <li class="single_user d-flex justify-content-between py-2 px-3"
+                            :class="{'active' : selectedUser === user}"
                             v-for="(user, i) in userList" :key="i + user.name"
                             @click="selectedUser = user">
                             <div class="profile d-flex gap-3">
@@ -107,7 +108,9 @@
                             <button class="btn"><i class="fa-regular fa-face-smile"></i></button>
                         </div>
                         <div class="text_area">
-                            <input type="text" class="form-control" placeholder="Scrivi un messaggio">
+                            <input type="text" class="form-control" placeholder="Scrivi un messaggio"
+                            v-model="newText.message"
+                            @keyup.enter="sendText">
                         </div>
                         <div class="record_msg">
                             <button class="btn"><i class="fa-solid fa-microphone"></i></button>
