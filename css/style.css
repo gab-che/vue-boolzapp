@@ -70,6 +70,10 @@ main{
     border-bottom: 1px solid var(--color_selected);
 }
 
+.single_user:hover{
+    cursor: default;
+}
+
 .single_user.active{
     background-color: var(--color_selected);
 }

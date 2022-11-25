@@ -78,10 +78,10 @@
                         <div class="profile_container d-flex justify-content-between">
                             <div class="profile d-flex align-items-center gap-2">
                                 <div class="profile_img">
-                                    <img src="img/avatar_1.jpg" alt="" class="img-fluid">
+                                    <img :src="`img/avatar${selectedUser.avatar}.jpg`" alt="" class="img-fluid">
                                 </div>
                                 <div class="profile_text d-flex flex-column">
-                                    <span class="main_text">Michele</span>
+                                    <span class="main_text">{{selectedUser.name}}</span>
                                     <span class="sub_text">Ultimo accesso oggi alle 11:00</span>
                                 </div>
                             </div>
