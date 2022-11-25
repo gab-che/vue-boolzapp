@@ -21,9 +21,20 @@ createApp({
                 date: new Date().toLocaleString(),
                 status: "sent"
             });
-            
+
             this.newText.message = "";
-        }
+            this.receiveText()
+        },
+
+        receiveText(){
+            setTimeout(()=> {
+                this.selectedUser.messages.push({
+                    message: "Smettila di scocciarmi",
+                    date: new Date().toLocaleString(),
+                    status: "received"
+                });
+            }, 2000)
+        },
     },
 
     beforeMount(){
