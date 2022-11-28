@@ -52,6 +52,16 @@ createApp({
         getRandomDate(){
             const dates = ['ieri', 'oggi', 'lunedì', 'martedì', 'mercoledì', 'giovedì', 'venerdì', 'sabato', 'domenica'];
             return dates[Math.floor(Math.random()*dates.length)]
+        },
+
+        getRandomHours(){
+            const hours = this.getRandomNumber(0, 23);
+            return hours.toString().padStart(2, 0);
+        },
+
+        getRandomMinutes(){
+            const minutes = this.getRandomNumber(0, 59);
+            return minutes.toString().padStart(2, 0);
         }
     },
 
