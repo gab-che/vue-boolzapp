@@ -39,6 +39,10 @@ createApp({
 
         deleteMessage(index){
             this.selectedUser.messages.splice(index, 1)
+        },
+
+        infoMessage(index){
+            alert(`Data messaggio: ${this.selectedUser.messages[index].date}`);
         }
     },
 
