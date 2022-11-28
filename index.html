@@ -94,7 +94,7 @@
                                 </div>
                                 <div class="profile_text d-flex flex-column">
                                     <span class="main_text">{{selectedUser.name}}</span>
-                                    <span class="sub_text">Ultimo accesso oggi alle 11:00</span>
+                                    <span class="sub_text">Ultimo accesso {{getRandomDate()}} alle {{getRandomNumber(00, 23)}}:{{getRandomNumber(00, 59)}}</span>
                                 </div>
                             </div>
                             <ul class="button_list list-unstyled d-flex align-items-center gap-2">

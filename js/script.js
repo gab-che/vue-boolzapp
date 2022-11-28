@@ -43,6 +43,15 @@ createApp({
 
         infoMessage(index){
             alert(`Data messaggio: ${this.selectedUser.messages[index].date}`);
+        },
+
+        getRandomNumber(min, max){
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        },
+
+        getRandomDate(){
+            const dates = ['ieri', 'oggi', 'lunedì', 'martedì', 'mercoledì', 'giovedì', 'venerdì', 'sabato', 'domenica'];
+            return dates[Math.floor(Math.random()*dates.length)]
         }
     },
 
