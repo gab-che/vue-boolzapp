@@ -12,7 +12,6 @@ createApp({
                 }
             ],
             newSearchInput: "",
-            dateTime : luxon.DateTime,
         };
     },
 
@@ -20,7 +19,7 @@ createApp({
         sendText(){
             this.selectedUser.messages.push({
                 message: this.newText.message,
-                date: this.dateTime.now().toFormat('HH:mm:ss'),
+                date: new Date().toLocaleTimeString('it-IT'),
                 status: "sent"
             });
 
@@ -32,7 +31,7 @@ createApp({
             setTimeout(()=> {
                 this.selectedUser.messages.push({
                     message: "Smettila di scocciarmi",
-                    date: this.dateTime.now().toFormat('HH:mm:ss'),
+                    date: new Date().toLocaleTimeString('it-IT'),
                     status: "received"
                 });
             }, 2000)
