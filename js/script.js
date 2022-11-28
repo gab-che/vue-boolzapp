@@ -11,6 +11,7 @@ createApp({
                     message: "",
                 }
             ],
+            newSearchInput: "",
         };
     },
 
@@ -35,6 +36,19 @@ createApp({
                 });
             }, 2000)
         },
+    },
+
+    computed: {
+        searchUser(){
+            userList.forEach((element)=>{
+                const lowerName = element.name.toLowerCase();
+                element.visible = true;
+
+                if(!lowerName.includes(this.newSearchInput)){
+                    element.visible = false;
+                }
+            })
+        }
     },
 
     beforeMount(){
