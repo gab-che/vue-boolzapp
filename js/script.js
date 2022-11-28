@@ -36,6 +36,10 @@ createApp({
                 });
             }, 2000)
         },
+
+        deleteMessage(index){
+            this.selectedUser.messages.splice(index, 1)
+        }
     },
 
     computed: {

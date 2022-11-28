@@ -141,6 +141,18 @@ a, .sub_text{
     display: flex;
     justify-content: space-between;
     padding: .5rem .3rem .3rem .6rem;
+    position: relative;
+}
+
+.text_bubble .dropdown_container{
+    display: none;
+    position: absolute;
+    top:0;
+    right: 0;
+}
+
+.text_bubble:hover .dropdown_container{
+    display: block;
 }
 
 .text_bubble.sent{
