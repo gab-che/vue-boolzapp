@@ -55,7 +55,8 @@
                                 <i class="fa-solid fa-magnifying-glass"></i>
                             </button>
                             <input type="text" class="form-control" placeholder="Cerca o inizia una nuova chat"
-                            v-model="newSearchInput">
+                            v-model="newSearchInput"
+                            @input="searchUser()">
                         </div>
                     </div>
                     
@@ -94,7 +95,7 @@
                                 </div>
                                 <div class="profile_text d-flex flex-column">
                                     <span class="main_text">{{selectedUser.name}}</span>
-                                    <span class="sub_text">Ultimo accesso {{getRandomDate()}} alle {{getRandomHours()}}:{{getRandomMinutes()}}</span>
+                                    <span class="sub_text">Ultimo accesso {{selectedUser.messages[selectedUser.messages.length -1].date}}</span>
                                 </div>
                             </div>
                             <ul class="button_list list-unstyled d-flex align-items-center gap-2">

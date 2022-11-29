@@ -54,6 +54,17 @@ createApp({
             return dates[Math.floor(Math.random()*dates.length)]
         },
 
+        searchUser(){
+            this.userList.forEach((element)=>{
+                const lowerName = element.name.toLowerCase();
+                element.visible = true;
+
+                if(!lowerName.includes(this.newSearchInput)){
+                    element.visible = false;
+                }
+            })
+        },
+
         getRandomHours(){
             const hours = this.getRandomNumber(0, 23);
             return hours.toString().padStart(2, 0);
@@ -62,19 +73,6 @@ createApp({
         getRandomMinutes(){
             const minutes = this.getRandomNumber(0, 59);
             return minutes.toString().padStart(2, 0);
-        }
-    },
-
-    computed: {
-        searchUser(){
-            userList.forEach((element)=>{
-                const lowerName = element.name.toLowerCase();
-                element.visible = true;
-
-                if(!lowerName.includes(this.newSearchInput)){
-                    element.visible = false;
-                }
-            })
         }
     },
 
